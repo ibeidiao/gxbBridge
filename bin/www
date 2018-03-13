@@ -8,6 +8,10 @@ var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
 
+const initLogPath = require('./../utils/init_log_file');
+
+// 初始化log相关目录
+// initLogPath();
 /**
  * Get port from environment and store in Express.
  */

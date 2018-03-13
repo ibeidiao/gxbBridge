@@ -6,8 +6,14 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
+// middlewares
+const sign = require('./middlewares/sign');
+const logUtil = require('./utils/log_util');
+
+// router
 const index = require('./routes/index')
 const users = require('./routes/users')
+const api = require('./routes/api');
 
 // error handler
 onerror(app)
@@ -29,16 +35,22 @@ app.use(async (ctx, next) => {
   const start = new Date()
   await next()
   const ms = new Date() - start
-  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+  logUtil.logResponse(ctx, ms);
+  // console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
+
+// sign 签名验证
+app.use(sign('^/api'));
 
 // routes
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
+app.use(api.routes(), api.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
-  console.error('server error', err, ctx)
+  logUtil.logError(ctx, err, '');
+  // console.error('server error', err, ctx)
 });
 
 module.exports = app

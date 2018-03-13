@@ -1,0 +1,120 @@
+[2018-03-13T14:06:58.205] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/json
+request client ip:  ::1
+request query:  {}
+response time: 4
+response status: 200
+response body: 
+{"resCode":1004,"errorMsg":"请求参数不完整","data":""}
+*************** response log end ***************
+
+[2018-03-13T14:07:38.721] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/json
+request client ip:  ::1
+request query:  {}
+response time: 0
+response status: 200
+response body: 
+{"resCode":1004,"errorMsg":"请求参数不完整","data":""}
+*************** response log end ***************
+
+[2018-03-13T14:11:52.705] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/json
+request client ip:  ::1
+request query:  {}
+response time: 3
+response status: 200
+response body: 
+{"resCode":1004,"errorMsg":"请求参数不完整","data":""}
+*************** response log end ***************
+
+[2018-03-13T14:12:17.281] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api
+request client ip:  ::1
+request query:  {}
+response time: 0
+response status: 200
+response body: 
+{"resCode":1004,"errorMsg":"请求参数不完整","data":""}
+*************** response log end ***************
+
+[2018-03-13T14:12:22.624] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /apie
+request client ip:  ::1
+request query:  {}
+response time: 1
+response status: 200
+response body: 
+{"resCode":1004,"errorMsg":"请求参数不完整","data":""}
+*************** response log end ***************
+
+[2018-03-13T14:12:30.613] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /aie
+request client ip:  ::1
+request query:  {}
+response time: 0
+response status: 404
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-03-13T14:14:22.299] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /aie
+request client ip:  ::1
+request query:  {}
+response time: 1
+response status: 404
+response body: 
+undefined
+*************** response log end ***************
+
+[2018-03-13T14:15:13.322] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/json
+request client ip:  ::1
+request query:  {}
+response time: 3
+response status: 200
+response body: 
+{"resCode":1004,"errorMsg":"请求参数不完整","data":""}
+*************** response log end ***************
+
+[2018-03-13T14:18:54.176] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/json?a=11
+request client ip:  ::1
+request query:  {"a":"11","account":"11111"}
+response time: 6
+response status: 200
+response body: 
+{"title":"api json"}
+*************** response log end ***************
+
+[2018-03-13T14:22:45.795] [INFO] response - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /api/json?a=11
+request client ip:  ::1
+request query:  {"a":"11","account":"11111"}
+response time: 4
+response status: 200
+response body: 
+{"title":"api json"}
+*************** response log end ***************
+
