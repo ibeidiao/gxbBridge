@@ -7,11 +7,17 @@ class Result {
     this.resCode = resCode;
     this.errorMsg = errorMsg;
     this.data = data;
-    return {
-      resCode: resCode,
-      errorMsg: errorMsg,
-      data: data
-    }
+    return [
+      {
+        request_id: '',
+        datasource: '',
+        body: {
+          code: resCode,
+          message: errorMsg,
+          data: data
+        }
+      }
+    ]
   }
 }
 

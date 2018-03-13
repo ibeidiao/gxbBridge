@@ -87,6 +87,9 @@ const formatReqLog = (req, resTime) => {
     //客户端ip
     logText += "request client ip:  " + req.ip + "\n";
 
+    // 请求头部
+    logText += "request header:  " + "\n" + JSON.stringify(req.headers) + "\n";    
+
     //开始时间
     let startTime;
     //请求参数

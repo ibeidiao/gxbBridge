@@ -12,6 +12,8 @@ const sign = (ctx) => {
   const account = headers['x-account'];
   const timestamp = headers['x-timestamp'];
   const sign = headers['x-sign'];
+
+  const password = 111111;
   
   if (account === undefined || timestamp === undefined || sign === undefined) {
     ctx.body = result.toValue(1004, '请求参数不完整', '');
@@ -21,13 +23,14 @@ const sign = (ctx) => {
   let query = null;
 
   if (ctx.method === 'GET') {
-    query = ctx.query;
+    query = ctx.request.query;
   } else if(ctx.method === 'POST') {
-    query = ctx.body;
+    query = ctx.request.body;
   }
 
   _.extend(query, {
-    account: account
+    account: account,
+    password: password
   });
   let sortRsult = util.sortByKey(query);
   sortRsult.push(timestamp);
@@ -37,8 +40,13 @@ const sign = (ctx) => {
   
   const md5 = crypto.createHash('md5');
   md5.update(signString);
-  console.log(`md5: ${md5.digest('hex')}`)
+  const signHex = md5.digest('hex');
+  console.log(`md5: ${signHex}`);
 
+  if (signHex !== sign) {
+    ctx.body = result.toValue(10010, '验签失败', '');
+    return;
+  }
 }
 
 const url_filter = (pattern) => {
