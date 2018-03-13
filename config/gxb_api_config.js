@@ -2,7 +2,7 @@ const superagent = require('superagent');
 
 const url = '101.132.174.77';
 const port = '3000';
-const get_data_timeout = 500;
+const get_data_timeout = 600;
 
 const apiPath = {
   gxbcrime: '/rpc/1.17.2/1.0.0',        //公安不良记录

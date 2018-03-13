@@ -10,6 +10,11 @@ let consoleLogger = log4js.getLogger('console');
 let errorLogger = log4js.getLogger('error');
 let resLogger = log4js.getLogger('response');
 
+// 验证签名日志
+logUtil.logSign = () => {
+  
+};
+
 //封装错误日志
 logUtil.logError = (ctx, error, resTime) => {
     if (ctx && error) {
